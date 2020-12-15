@@ -25,21 +25,11 @@ class Person
     end
 
     def check_happiness(happiness)
-        if happiness > MaxHappiness
-            @happiness = MaxHappiness
-        elsif happiness < MinHappiness
-            @happiness = MinHappiness
-        else @happiness = happiness
-        end
+        @happiness = happiness.clamp(0, 10)
     end
 
     def check_hygiene(hygiene)
-        if hygiene > MaxHygiene
-            @hygiene = MaxHygiene
-        elsif hygiene < MinHygiene
-            @hygiene = MinHygiene
-        else @hygiene = hygiene
-        end
+        @hygiene = hygiene.clamp(0, 10)
     end
 
     def happy?
